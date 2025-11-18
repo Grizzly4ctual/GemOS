@@ -1,0 +1,8 @@
+#include "allocator.h"
+#include <stdio.h>
+int main(){
+void* p = gemos_malloc(10000);
+printf("Allocated memory at %p
+", p);
+gemos_free(p,10000);
+}

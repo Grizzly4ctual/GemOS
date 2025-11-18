@@ -1,0 +1,20 @@
+#include "rr_scheduler.h"
+#include <stdio.h>
+#include <unistd.h>
+
+
+void* worker(void* arg) {
+for (int i = 0; i < 5; i++) {
+printf("[Thread] iteration %d
+", i);
+usleep(200000);
+}
+return NULL;
+}
+
+
+int main() {
+scheduler_add(worker);
+scheduler_add(worker);
+scheduler_start();
+}
